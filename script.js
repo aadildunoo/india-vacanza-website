@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
             } catch (error) {
-                alert('Oops! There was a problem sending your message. Please try again or email info@indiavacanza.com');
+                alert('Oops! There was a problem sending your message. Please try again or contact us via phone.');
                 submitBtn.innerText = originalBtnText;
                 submitBtn.disabled = false;
             }
