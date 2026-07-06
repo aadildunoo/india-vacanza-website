@@ -12,17 +12,7 @@
     <meta property="og:url" content="https://indiavacanza.com/">
     <meta property="og:title" content="India Vacanza | Custom Travel Experiences in India">
     <meta property="og:description" content="Bespoke travel experiences across India. Personalized itineraries, professional chauffeurs, and 24/7 support.">
-    <meta property="og:image" content="https://indiavacanza.com/images/hero.png">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://indiavacanza.com/">
-    <meta property="twitter:title" content="India Vacanza | Custom Travel Experiences in India">
-    <meta property="twitter:description" content="Bespoke travel experiences across India. Personalized itineraries, professional chauffeurs, and 24/7 support.">
-    <meta property="twitter:image" content="https://indiavacanza.com/images/hero.png">
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://indiavacanza.com/" />
+    <meta property="og:image" content="images/hero.png">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -461,33 +451,48 @@
                             <p><strong>Support:</strong> 24/7 Dedicated Line</p>
                         </div>
                     </div>
+                    <div data-fs-success class="form-success-msg">Thanks for your inquiry! We will get back to you shortly.</div>
+                    <div data-fs-error class="form-error-msg">There was a problem submitting your form. Please try again.</div>
+
                     <form class="contact-form" id="my-form" action="https://formspree.io/f/mlgyzvvn" method="POST">
                         <div class="form-group">
-                            <input type="text" name="name" placeholder="Your Name" required>
+                            <input type="text" name="name" placeholder="Your Name" required data-fs-field>
+                            <span data-fs-error="name"></span>
                         </div>
                         <div class="form-group">
-                            <input type="email" name="email" placeholder="Your Email" required>
+                            <input type="email" name="email" placeholder="Your Email" required data-fs-field>
+                            <span data-fs-error="email"></span>
                         </div>
                         <div class="form-group">
-                            <input type="tel" id="phone" name="phone" required style="width: 100%;">
+                            <input type="tel" id="phone" name="phone" required style="width: 100%;" data-fs-field>
+                            <span data-fs-error="phone"></span>
                         </div>
                         <div class="form-group">
-                            <input type="number" name="persons" placeholder="Number of Persons" min="1">
+                            <input type="number" name="persons" placeholder="Number of Persons" min="1" data-fs-field>
+                            <span data-fs-error="persons"></span>
                         </div>
                         <div class="form-group">
-                            <select name="package">
+                            <select name="package" data-fs-field>
                                 <option value="">Select Package</option>
                                 <option value="Golden Triangle">Golden Triangle</option>
                                 <option value="Glimpses of the South">Glimpses of the South</option>
                                 <option value="Colorful Rajasthan">Colorful Rajasthan</option>
                                 <option value="Custom Itinerary">Custom Itinerary</option>
                             </select>
+                            <span data-fs-error="package"></span>
                         </div>
                         <div class="form-group">
-                            <textarea name="message" placeholder="Tell us about your dream trip..." required></textarea>
+                            <textarea name="message" placeholder="Tell us about your dream trip..." required data-fs-field></textarea>
+                            <span data-fs-error="message"></span>
                         </div>
-                        <button type="submit" class="btn-primary">Send Inquiry</button>
+                        <button type="submit" class="btn-primary" data-fs-submit-btn>Send Inquiry</button>
                     </form>
+
+                    <script>
+                      window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+                      formspree('initForm', { formElement: '#my-form', formId: 'mlgyzvvn' });
+                    </script>
+                    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
                 </div>
             </div>
         </section>
